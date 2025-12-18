@@ -1,43 +1,16 @@
 <script setup>
-import { ref} from 'vue';
-import { useFetch } from '../composables/useFetch';
-
-
-const url=ref(`http://localhost:3000/songs`)
-
-const {data, error,loading, fetchData}=useFetch(url);
-
-
-
 </script>
 
 <template>
-  <div v-if="loading">
-      <p>loading</p>
-  </div>
-
-  <div v-else-if="error">
-    <p>Error: {{ error }}</p>
-  </div>
-
-  <div v-else>
-    <!--Aquí ya se cargó los datos de la api-->
-    <div class="container">
-        <div id="admin-panel">
-        <!--<h1>Hi <%=username%>!</h1>-->
-        <p>You are in the admin pannel</p>
-        <a href="/protected">Manage items</a>
-        <button id="close-session">Log out</button>
+      <!--Aquí ya se cargó los datos de la api-->
+      <div class="container">
+          <div id="admin-panel">
+          <!--<h1>Hi <%=username%>!</h1>-->
+          <p>You are in the admin pannel</p>
+          <a href="/protected">Manage items</a>
+          <button id="close-session">Log out</button>
+      </div>
     </div>
-    <section class="btns">
-        
-        <a href="/movies"> List of movies</a>
-    </section>
-    
-    </div>
-    
-   
-  </div>
 </template>
 
 <style>
